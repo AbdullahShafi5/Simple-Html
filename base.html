@@ -1,0 +1,264 @@
+<title>{% block title %}{% endblock title %}</title>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script  src="https://code.jquery.com/jquery-3.6.0.js" ></script>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li class="btn" style="color: whitesmoke;" ><span class="fa fa-bars" ></span></li>
+      <li class="logo"> <a href="/" style="text-decoration: none; color:#f2f2f2; "> CodingMaf!a</a></li>
+      <div class="items" >
+        <li><a href="/">home</a></li>
+        <li><a href="/blog">blog</a></li>
+        <li><a href="/about">about</a></li>
+        <li><a href="/contact">contact</a></li>
+      </div>
+      <li class="search-icon"  >
+        <input class="inp-srh" type="search" placeholder="Search">
+        <label class="icon" >
+          <span class="fa fa-search srch"  ></span>
+        </label>
+        
+     </li>
+    </ul>
+  </nav>
+
+
+  
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;  
+  
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+} 
+nav ul li.logo{
+  flex:1;
+  color:#f2f2f2;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.srch{
+  color: #f2f2f2;
+  height: 100%;
+  width: 40px;
+  line-height:40px;
+  text-align: center;
+}
+.srch:hover{
+  cursor: pointer;
+  color: rgb(83, 95, 226);
+}
+nav ul div.items{
+  padding: 0 25px;
+  color: #f2f2f2;
+  display: inline-flex;
+}
+nav ul div.items a{
+  color: #f2f2f2;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 0 7px;
+
+}
+nav ul div.items a:hover{
+  color: rgb(83, 95, 226);
+} 
+
+nav{
+  background: #222222;
+  padding: 10px 40px 10px 50px;
+  border: 1px solid #000;
+  border-left: none;
+  border-right: none;
+}
+nav ul{
+  display:flex;
+  list-style: none;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+nav ul .search-icon{
+  height: 40px;
+  width: 240px;
+  display: flex;
+  background: #f2f2f2;
+  border-radius: 5px;
+}
+
+nav ul .search-icon input{
+  height: 100%;
+  padding-left: 7px;
+  width: 100%;
+  border:none;
+  color: #000;
+  outline: none;
+  font-size:16px;
+  border-radius:5px 0 0 5px ;
+}
+nav ul .search-icon .icon{ 
+  background: #000;
+  border: 1px solid #cccccc;
+  border-radius: 0 5px 5px 0;
+  
+}
+
+
+
+nav ul .search-icon .icon span{
+  
+  font-size: 15px;
+}
+
+
+nav ul li.btn{
+  display: none;
+  flex: 0;
+  font-size: 19px;
+  padding: 0 40px;
+}
+nav ul li.btn span{
+  height: 42px;
+  width: 42px;
+  text-align: center;
+  line-height: 42px;
+  border: 1px solid rgb(83, 95, 226);
+  border-radius: 5px;
+  cursor: pointer;
+
+}
+
+nav ul li.btn span.show:before{
+  content: '\f00d';
+}
+
+@media screen and (max-width:1052px){
+  nav{
+    padding: 10px 40px 10px 0px ;
+
+  }
+  
+  nav ul li.logo{
+    font-size: 25px;
+    padding-left: 40px;
+  }
+  nav ul div.items{
+    flex: 1;
+    
+  }
+
+  nav ul .search-icon{
+    
+    margin-left: auto;
+    width: 175px;
+
+  }
+
+  nav ul div.items a{
+    position: relative;
+    left: 90px;
+    padding-right: -3px ;
+    font-size: 15px;
+  }
+}
+@media screen and (max-width:900px){
+  nav ul div.items a{
+    position: relative;
+    left: 10px;
+  }
+  nav ul li.btn{
+    display: block;
+  }
+  nav ul li.logo{
+    font-size: 22px;
+    position: relative;
+    padding-left: 0px;
+    left:-59px;
+  }
+  nav{
+    z-index: 1;
+    padding: 9px 0px 9px 0 ;
+
+  }
+
+  /* hiding & designing the bullshit search box , Icon  @media */
+  .inp-srh{
+    display: none;
+  }
+  nav ul .search-icon{
+    display: contents;
+  }
+  nav ul .search-icon .icon{
+    border-radius: 11px;
+    border: 1px solid rgb(83, 95, 226);
+  }
+  
+  nav ul div.items{    
+    position: fixed;
+    top: -280px;
+    right: 0;
+    width: 100%;
+    background: #222222; 
+    display: inline-block;
+    transition: top .4s;
+  }
+  nav ul div.items.show{
+    top: 70px;
+  }
+  nav ul div.items li{
+    
+    text-align: center;
+    line-height: 30px;
+    margin: 30px 0;
+    
+  }
+  nav ul li.btn span{
+    position: relative;
+    right: 35px;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    line-height: 30px;
+
+  }
+
+  nav ul div.items li a{
+    font-size: 19px;
+
+  }
+  
+
+
+}
+
+
+
+
+</style>
+<script>
+  $('nav ul li.btn span').click(function(){
+    $('nav ul div.items').toggleClass("show");
+    $('nav ul li.btn span').toggleClass("show");
+  });
+  $(document)
+  
+</script>
+{% block body %}
+{% endblock body %}
+  </body>
+</html>
+
+ 
